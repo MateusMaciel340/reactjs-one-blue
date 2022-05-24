@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "../pages";
+import SignInSide from "../pages";
 
 function Routers(){
     return(
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home/>}/>
+                <Route path="/" element={<SignInSide/>}/>
             </Routes>
         </BrowserRouter>
     )
