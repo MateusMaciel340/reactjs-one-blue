@@ -24,7 +24,9 @@ function RightColumn(){
 
                             <Grid container>
                                 <Grid item xs>
-                                    <Link to="/" variant="body2">
+                                    <Link to="/user-registration" variant="body2" style={{
+                                        color: "#0d6efd", textDecoration: "none"
+                                    }}>
                                         Criar nova conta
                                     </Link>
                                 </Grid>
