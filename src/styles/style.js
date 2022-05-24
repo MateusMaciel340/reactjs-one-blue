@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -7,3 +7,11 @@ export const GlobalStyle = createGlobalStyle`
         font-family: "Roboto";
     }
 `;
+
+export const Message = styled.div`
+    color: #dc3545;
+`;
+
+export const MessageLogin = styled.label`
+    color: #dc3545;
+`
