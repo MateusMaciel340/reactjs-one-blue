@@ -22,9 +22,12 @@ function FormLabel(){
         validationSchema: yup.object({
             name: yup.string().required("O campo usuário é obrigatório!"),
             password: yup.string().required("O campo senha é obrigatório!"),
-            password_repeat: yup.string().required("Repita sua senha anterior!")
+            password_repeat: yup.string()
+                .test("password_repeat", "Essa senha não corresponde com a anterior!", function(value){
+                    return this.parent.password === value
+                })
         }),
-        onSubmit: (event) => {
+        onSubmit: (event, values) => {
             const data = {
                 name: name, password: password
             }
@@ -53,8 +56,8 @@ function FormLabel(){
                 <Grid item xs={12} sm={12}>
                     <TextField autoComplete="given-name" name="name"
                         fullWidth id="name" label="Digite o nome de usuário"
-                        onChange={(e) => {formik.handleChange(e); setName(e.target.value)}}
-                        onBlur={formik.handleBlur} value={formik.values.name}/>
+                        onChange={(e) => {formik.handleChange(e); setName(e.target.value.trim())}}
+                        onBlur={formik.handleBlur} value={(formik.values.name).replace(/\s+/g, '',)}/>
 
                     {formik.touched.name && formik.errors.name ? (
                         <Style.Message>{formik.errors.name}</Style.Message>

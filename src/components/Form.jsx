@@ -63,7 +63,7 @@ function Form(props){
                 margin="normal" fullWidth id="name" type="text"
                 name="name" autoComplete="name"
                 onChange={(e) => {formik.handleChange(e); setName(e.target.value)}} 
-                onBlur={formik.handleBlur} value={formik.values.name}
+                onBlur={formik.handleBlur} value={(formik.values.name).replace(/\s+/g, '',)}
 
                 label={"Digite seu nome de usuário"}
             />
