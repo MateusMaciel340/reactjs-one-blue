@@ -15,3 +15,7 @@ export const Message = styled.div`
 export const MessageLogin = styled.label`
     color: #dc3545;
 `
+
+export const ImageLogo = styled.img`
+    width: 100%;
+`;

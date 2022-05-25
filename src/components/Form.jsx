@@ -30,7 +30,7 @@ function Form(props){
                     setMessage(`Bem-vindo novamente, ${res.data.login}!`);
 
                     setTimeout(function(){
-                        window.location.href = window.location.pathname;
+                        window.location.href = "/authentication-sucess";
                     },2000)
                 })
                 .catch(error =>{
